@@ -39,6 +39,7 @@
 /* AdSense：依版位給 <ins> 明確尺寸，Google 會出剛好大小的廣告，載入前後版面不變 */
 .adsbygoogle {
   display: block;
+  margin-inline: auto; /* 固定寬度的版位水平置中 */
 }
 .adslot-top {
   width: 320px;
@@ -60,9 +61,9 @@
   width: 300px;
   height: 600px;
 }
+/* 資訊流為 fluid 格式，高度由 Google 依內容決定；外框固定最小高度並裁切，不影響卡片列高 */
 .adslot-infeed {
   width: 100%;
-  height: 100%;
 }
 /* 沒有廣告可填時隱藏，露出底下的佔位框 */
 .adsbygoogle[data-ad-status='unfilled'] {

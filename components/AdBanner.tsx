@@ -38,13 +38,26 @@ function AdUnit({ slot, adSlotId }: { slot: AdSlot; adSlotId: string }) {
 
   useEffect(() => {
     const el = ref.current;
-    // 同一個 <ins> 只能 push 一次（React Strict Mode 會執行兩次 effect）
-    if (!el || el.dataset.adsbygoogleStatus) return;
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch {
-      // 廣告攔截器或腳本尚未載入：保留佔位框即可
-    }
+    if (!el) return;
+
+    // 版位有實際寬度才請求廣告：手機上隱藏的側邊欄（寬度 0）不送請求，
+    // 背景分頁載入時寬度為 0 也會等到可見再送，避免 AdSense「availableWidth=0」錯誤
+    const tryPush = () => {
+      // 同一個 <ins> 只能 push 一次（React Strict Mode 會執行兩次 effect）
+      if (el.dataset.adsbygoogleStatus) return true;
+      if (el.offsetWidth === 0) return false;
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch {
+        // 廣告攔截器或腳本尚未載入：保留佔位框即可
+      }
+      return true;
+    };
+
+    if (tryPush()) return;
+    const ro = new ResizeObserver(() => tryPush() && ro.disconnect());
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
 
   const fluid = slot === 'infeed' && INFEED_LAYOUT_KEY;
@@ -80,7 +93,8 @@ export default function AdBanner({ slot, className }: { slot: AdSlot; className?
       <span className="text-xs font-medium">贊助商廣告</span>
       <span className="text-[11px] opacity-70 tabular">{SIZE_LABEL[slot]}</span>
       {adsEnabled && adSlotId && (
-        <div className="absolute inset-0 grid place-items-center">
+        // 固定尺寸版位以 margin-inline:auto 置中；fluid 資訊流撐滿卡片寬度
+        <div className="absolute inset-0">
           <AdUnit slot={slot} adSlotId={adSlotId} />
         </div>
       )}
