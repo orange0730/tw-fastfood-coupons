@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowDownUp, RefreshCw, SearchX, ShieldCheck, Zap } from 'lucide-react';
 import { countByBrand, queryCoupons, todayTaipei } from '@/lib/query';
@@ -162,6 +163,11 @@ export default function CouponBrowser({ coupons, updatedAt, buildDate }: Props) 
         <div className="mx-auto max-w-7xl px-4">
           <p>本站為非官方優惠彙整，與各品牌無合作關係。品牌名稱與商標屬各權利人所有。</p>
           <p className="mt-1">優惠內容、價格與期限以各品牌官網及門市公告為準；資料每日台灣時間 04:00 自動更新。</p>
+          <p className="mt-3">
+            <Link href="/privacy/" className="font-medium text-stone-600 underline-offset-2 hover:underline dark:text-stone-300">
+              隱私權政策
+            </Link>
+          </p>
         </div>
       </footer>
 

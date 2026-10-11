@@ -70,6 +70,13 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          # AdSense 設定在 repo 的 Settings → Secrets and variables → Actions → Variables
+          # 未設定時網站顯示灰底佔位框（見 lib/ads.ts）
+          NEXT_PUBLIC_ADSENSE_CLIENT: ${{ vars.ADSENSE_CLIENT }}
+          NEXT_PUBLIC_ADSENSE_SLOT_TOP: ${{ vars.ADSENSE_SLOT_TOP }}
+          NEXT_PUBLIC_ADSENSE_SLOT_INFEED: ${{ vars.ADSENSE_SLOT_INFEED }}
+          NEXT_PUBLIC_ADSENSE_INFEED_LAYOUT: ${{ vars.ADSENSE_INFEED_LAYOUT }}
+          NEXT_PUBLIC_ADSENSE_SLOT_SIDEBAR: ${{ vars.ADSENSE_SLOT_SIDEBAR }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
