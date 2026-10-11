@@ -1,0 +1,86 @@
+name: Crawl & Deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 20 * * *' # 20:00 UTC = 台灣時間 04:00
+  workflow_dispatch:
+
+permissions:
+  contents: write # 爬蟲把 data/coupons.json 推回 repo
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # 排程 / 手動觸發時才爬；一般 push 直接用 repo 內現有資料建置
+  crawl:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run crawler
+        run: npm run crawl
+
+      - name: Commit & push if changed
+        run: |
+          if [[ -n "$(git status --porcelain data/coupons.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/coupons.json
+            git commit -m "chore(data): update coupons"
+            git push
+          else
+            echo "No data changes."
+          fi
+
+  build:
+    needs: crawl
+    # crawl 被略過（push 觸發）時仍要建置；crawl 失敗則不部署
+    if: ${{ !failure() && !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main # 取得 crawl 剛推上去的最新資料
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build static site
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

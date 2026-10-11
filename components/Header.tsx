@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Moon, Search, Sun, X } from 'lucide-react';
 
@@ -37,13 +38,13 @@ export default function Header({ query, onQuery }: { query: string; onQuery: (v:
   return (
     <header className="sticky top-0 z-20 border-b border-stone-200/80 bg-white/85 backdrop-blur-md dark:border-stone-800 dark:bg-stone-900/85">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:gap-6">
-        <a href="/" className="flex shrink-0 items-center gap-2.5" aria-label="速食優惠情報站 首頁">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="速食優惠情報站 首頁">
           <Logo />
           <span className="hidden leading-tight sm:block">
             <span className="block text-[15px] font-black tracking-tight">速食優惠情報站</span>
             <span className="block text-[11px] font-medium text-stone-500 dark:text-stone-400">官方優惠 · 每日更新</span>
           </span>
-        </a>
+        </Link>
 
         <div className="relative max-w-xl flex-1">
           <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-stone-400" />

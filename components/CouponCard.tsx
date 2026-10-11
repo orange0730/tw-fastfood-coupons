@@ -48,7 +48,13 @@ function Cover({ c }: { c: CouponView }) {
   // 接近 4:3 的照片滿版裁切；直式/方形券面完整顯示，背景鋪同圖模糊放大
   const [fit, setFit] = useState<'cover' | 'contain'>('cover');
   const brand = BRAND_MAP[c.brand];
-  const src = c.imageUrl ? `/api/img?url=${encodeURIComponent(c.imageUrl)}` : '';
+  // 官方圖床皆允許外站引用（2026-10 驗證）；不送 Referer 以降低被擋機率
+  const src = c.imageUrl ?? '';
+  const measure = (img: HTMLImageElement) => {
+    const { naturalWidth: w, naturalHeight: h } = img;
+    if (!w) setFailed(true);
+    else if (w / h < 1.15) setFit('contain');
+  };
 
   return (
     // 固定比例容器，圖片載入前後高度不變，避免 CLS
@@ -57,19 +63,21 @@ function Cover({ c }: { c: CouponView }) {
         <>
           {fit === 'contain' && (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={src} alt="" aria-hidden className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-xl" />
+            <img src={src} alt="" aria-hidden referrerPolicy="no-referrer" className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-xl" />
           )}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            // 靜態 HTML 的圖片可能在 hydration 前就載入完成（onLoad 不會觸發），掛載時補判斷一次
+            ref={(el) => {
+              if (el?.complete) measure(el);
+            }}
             src={src}
             alt={c.title}
             loading="lazy"
             decoding="async"
+            referrerPolicy="no-referrer"
             onError={() => setFailed(true)}
-            onLoad={(e) => {
-              const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
-              if (h && w / h < 1.15) setFit('contain');
-            }}
+            onLoad={(e) => measure(e.currentTarget)}
             className={clsx(
               'relative h-full w-full transition-transform duration-300',
               fit === 'cover' ? 'object-cover group-hover:scale-[1.03]' : 'object-contain drop-shadow-md',

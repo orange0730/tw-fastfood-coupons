@@ -1,12 +1,12 @@
 'use client';
 
-import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ArrowDownUp, RefreshCw, SearchX, ShieldCheck, Zap } from 'lucide-react';
-import type { CouponView, CouponsResponse, SortKey } from '@/types/coupon';
+import { countByBrand, queryCoupons, todayTaipei } from '@/lib/query';
+import type { Coupon, SortKey } from '@/types/coupon';
 import AdBanner from './AdBanner';
 import BrandBar from './BrandBar';
 import CouponCard from './CouponCard';
-import CouponCardSkeleton from './CouponCardSkeleton';
 import Header from './Header';
 import StickyBottomAd from './StickyBottomAd';
 import TagFilter from './TagFilter';
@@ -20,57 +20,38 @@ const SORT_LABEL: Record<SortKey, string> = {
   discount: '折扣最多',
 };
 
-function useDebounced<T>(value: T, ms: number) {
-  const [v, setV] = useState(value);
-  useEffect(() => {
-    const t = setTimeout(() => setV(value), ms);
-    return () => clearTimeout(t);
-  }, [value, ms]);
-  return v;
+// 不用 Intl：Node 與瀏覽器的 ICU 版本可能輸出不同的空白字元，造成 hydration mismatch。
+// 台灣無日光節約時間，固定 UTC+8 即可
+function fmtUpdated(iso: string | null) {
+  if (!iso) return '—';
+  const t = new Date(Date.parse(iso) + 8 * 3600_000);
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${t.getUTCMonth() + 1}/${t.getUTCDate()} ${pad(t.getUTCHours())}:${pad(t.getUTCMinutes())}`;
 }
 
-const fmtUpdated = (iso: string | null) =>
-  iso
-    ? new Intl.DateTimeFormat('zh-TW', {
-        timeZone: 'Asia/Taipei',
-        month: 'numeric',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-      }).format(new Date(iso))
-    : '—';
+interface Props {
+  coupons: Coupon[];
+  updatedAt: string | null;
+  /** 建置當天（台北時區）。首次渲染沿用它以吻合靜態 HTML，掛載後再換成使用者的今天 */
+  buildDate: string;
+}
 
-export default function CouponBrowser() {
+export default function CouponBrowser({ coupons, updatedAt, buildDate }: Props) {
   const [brand, setBrand] = useState('all');
   const [tag, setTag] = useState('');
   const [sort, setSort] = useState<SortKey>('expiring_soon');
   const [query, setQuery] = useState('');
-  const q = useDebounced(query, 250);
-
-  const [data, setData] = useState<CouponsResponse | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [today, setToday] = useState(buildDate);
   const [toast, setToast] = useState<string | null>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-  const [reloadKey, setReloadKey] = useState(0);
 
-  useEffect(() => {
-    const ctrl = new AbortController();
-    const params = new URLSearchParams({ sort });
-    if (brand !== 'all') params.set('brand', brand);
-    if (tag) params.set('tag', tag);
-    if (q.trim()) params.set('q', q.trim());
+  // 靜態頁面可能在建置數天後才被開啟：重新以當下日期計算剩餘天數與過期狀態
+  useEffect(() => setToday(todayTaipei()), []);
 
-    setLoading(true);
-    setError(false);
-    fetch(`/api/coupons?${params}`, { signal: ctrl.signal })
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((d: CouponsResponse) => setData(d))
-      .catch((e) => e?.name !== 'AbortError' && setError(true))
-      .finally(() => !ctrl.signal.aborted && setLoading(false));
-    return () => ctrl.abort();
-  }, [brand, tag, sort, q, reloadKey]);
+  // 品牌數量以「除了品牌以外的條件」計算，讓品牌列顯示切換後會看到幾筆
+  const withoutBrand = useMemo(() => queryCoupons(coupons, { tag, q: query, sort, today }), [coupons, tag, query, sort, today]);
+  const brandCounts = useMemo(() => countByBrand(withoutBrand), [withoutBrand]);
+  const items = brand === 'all' ? withoutBrand : withoutBrand.filter((c) => c.brand === brand);
 
   const onCopied = useCallback((msg: string) => {
     setToast(msg);
@@ -84,9 +65,7 @@ export default function CouponBrowser() {
     setQuery('');
   };
 
-  const items: CouponView[] = data?.items ?? [];
-  const brandCount = Object.keys(data?.brandCounts ?? {}).length;
-  const filtered = brand !== 'all' || !!tag || !!q.trim();
+  const filtered = brand !== 'all' || !!tag || !!query.trim();
 
   return (
     <>
@@ -114,29 +93,23 @@ export default function CouponBrowser() {
             </span>
             <span className="inline-flex items-center gap-1.5 tabular">
               <RefreshCw className="h-3.5 w-3.5" />
-              {data ? `${brandCount} 個品牌 · 更新於 ${fmtUpdated(data.updatedAt)}` : '載入中'}
+              {Object.keys(countByBrand(queryCoupons(coupons, { today }))).length} 個品牌 · 更新於 {fmtUpdated(updatedAt)}
             </span>
           </p>
         </section>
 
         <div className="space-y-3">
-          <BrandBar value={brand} onChange={setBrand} counts={data?.brandCounts ?? null} />
+          <BrandBar value={brand} onChange={setBrand} counts={brandCounts} />
           <TagFilter value={tag} onChange={setTag} />
         </div>
 
         <div className="mt-5 flex items-center justify-between gap-3 border-t border-stone-200 pt-4 dark:border-stone-800">
           <p className="text-sm text-stone-600 dark:text-stone-400" aria-live="polite">
-            {loading && !data ? (
-              '載入中…'
-            ) : (
-              <>
-                共 <strong className="font-bold text-stone-900 tabular dark:text-stone-100">{items.length}</strong> 則優惠
-                {filtered && (
-                  <button type="button" onClick={reset} className="ml-2 font-medium text-red-600 hover:underline dark:text-red-400">
-                    清除篩選
-                  </button>
-                )}
-              </>
+            共 <strong className="font-bold text-stone-900 tabular dark:text-stone-100">{items.length}</strong> 則優惠
+            {filtered && (
+              <button type="button" onClick={reset} className="ml-2 font-medium text-red-600 hover:underline dark:text-red-400">
+                清除篩選
+              </button>
             )}
           </p>
           <label className="relative flex items-center">
@@ -157,19 +130,16 @@ export default function CouponBrowser() {
         </div>
 
         <div className="mt-4 flex items-start gap-6">
-          <section className="min-w-0 flex-1" aria-busy={loading} aria-label="優惠列表">
-            {loading && !data ? (
-              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                {Array.from({ length: 6 }, (_, i) => (
-                  <CouponCardSkeleton key={i} />
-                ))}
-              </div>
-            ) : error ? (
-              <EmptyState title="資料載入失敗" hint="可能是網路不穩，請稍後再試。" action="重新載入" onAction={() => setReloadKey((k) => k + 1)} />
-            ) : items.length === 0 ? (
-              <EmptyState title="找不到符合的優惠" hint="換個關鍵字，或清除篩選條件看看。" action="清除篩選" onAction={reset} />
+          <section className="min-w-0 flex-1" aria-label="優惠列表">
+            {items.length === 0 ? (
+              <EmptyState
+                title={coupons.length ? '找不到符合的優惠' : '目前沒有優惠資料'}
+                hint={coupons.length ? '換個關鍵字，或清除篩選條件看看。' : '資料每日自動更新，請稍後再回來看看。'}
+                action="清除篩選"
+                onAction={reset}
+              />
             ) : (
-              <div className={`grid gap-4 transition-opacity duration-150 sm:grid-cols-2 xl:grid-cols-3 ${loading ? 'opacity-60' : ''}`}>
+              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 {items.map((c, i) => (
                   <Fragment key={c.id}>
                     <CouponCard coupon={c} onCopied={onCopied} />
