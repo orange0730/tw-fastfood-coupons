@@ -2,7 +2,7 @@
 
 彙整台灣速食品牌官網公開優惠，一鍵複製優惠碼、直接前往官方點餐頁。
 
-**網站：https://orange0730.github.io/tw-fastfood-coupons/**
+**網站：https://wudodo.me/tw-fastfood-coupons/**
 
 | 品牌 | 資料來源 | 一鍵點餐 |
 |---|---|---|

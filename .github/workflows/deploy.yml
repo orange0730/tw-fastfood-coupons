@@ -77,6 +77,8 @@ jobs:
 
   deploy:
     needs: build
+    # 上游 crawl 被略過時，預設條件也會略過 deploy，需明確只看 build 是否成功
+    if: ${{ !failure() && !cancelled() && needs.build.result == 'success' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
