@@ -45,6 +45,20 @@ export interface CouponView extends Coupon {
   discountPercent: number | null;
 }
 
+/** 爬蟲每次執行寫入 data/meta.json */
+export interface CrawlMeta {
+  checkedAt: string;
+  sources: {
+    brand: BrandId;
+    label: string;
+    url: string;
+    ok: boolean;
+    count: number;
+    lastSuccess?: string;
+    error?: string;
+  }[];
+}
+
 export interface CouponsResponse {
   total: number;
   updatedAt: string | null;

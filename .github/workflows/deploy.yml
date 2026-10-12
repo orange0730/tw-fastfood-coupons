@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '0 20 * * *' # 20:00 UTC = 台灣時間 04:00
+    # 19:17 UTC = 台灣時間 03:17。避開整點：GitHub 排程在整點最壅塞，曾延遲 3 小時以上
+    - cron: '17 19 * * *'
   workflow_dispatch:
 
 permissions:
@@ -36,11 +37,12 @@ jobs:
 
       - name: Commit & push if changed
         run: |
-          if [[ -n "$(git status --porcelain data/coupons.json)" ]]; then
+          # meta.json 每次都會更新檢查時間 → 每日一個 commit，也避免公開 repo 排程因 60 天無活動被停用
+          if [[ -n "$(git status --porcelain data/)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/coupons.json
-            git commit -m "chore(data): update coupons"
+            git add data/
+            git commit -m "chore(data): daily crawl"
             git push
           else
             echo "No data changes."

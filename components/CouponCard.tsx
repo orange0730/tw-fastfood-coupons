@@ -2,10 +2,24 @@
 
 import { useState } from 'react';
 import clsx from 'clsx';
-import { ArrowUpRight, CalendarClock, Check, ChevronDown, Copy, ExternalLink, Sparkles } from 'lucide-react';
+import { ArrowUpRight, CalendarClock, Check, ChevronDown, Copy, ExternalLink, Globe, Smartphone, Sparkles } from 'lucide-react';
 import { BRAND_MAP } from '@/lib/brands';
 import type { CouponView } from '@/types/coupon';
 import BrandMark from './BrandMark';
+
+const BTN_PRIMARY =
+  'flex h-11 items-center justify-center gap-1.5 rounded-xl bg-red-600 px-3 text-sm font-bold text-white transition-colors duration-150 hover:bg-red-700 active:bg-red-800';
+const BTN_SECONDARY =
+  'flex h-11 shrink-0 items-center justify-center gap-1.5 rounded-xl border border-stone-200 px-3 text-sm font-semibold text-stone-700 transition-colors duration-150 hover:bg-stone-100 dark:border-stone-700 dark:text-stone-200 dark:hover:bg-stone-800';
+
+/** 點擊當下判斷裝置（不在 render 時判斷，避免與靜態 HTML 不一致） */
+function detectPlatform(): 'ios' | 'android' | 'other' {
+  const ua = navigator.userAgent;
+  // iPadOS 13+ 的 UA 與 Mac 相同，以觸控點數區分
+  if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return 'ios';
+  if (/Android/i.test(ua)) return 'android';
+  return 'other';
+}
 
 /** 寫入剪貼簿；非 HTTPS / 舊瀏覽器 fallback 到 execCommand */
 function writeClipboard(text: string): Promise<void> {
@@ -107,21 +121,38 @@ function Cover({ c }: { c: CouponView }) {
 export default function CouponCard({ coupon: c, onCopied }: { coupon: CouponView; onCopied: (msg: string) => void }) {
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(false);
+  const [storePicker, setStorePicker] = useState(false);
   const brand = BRAND_MAP[c.brand];
   const orderUrl = c.orderUrl ?? brand.orderUrl;
+  const app = c.expired ? undefined : brand.app;
 
-  const copy = (msg: string) => {
-    if (!c.code) return;
-    void writeClipboard(c.code);
+  const copy = (msg: string): Promise<void> => {
+    if (!c.code) return Promise.resolve();
     setCopied(true);
     setTimeout(() => setCopied(false), 1600);
     onCopied(msg);
+    return writeClipboard(c.code);
   };
 
-  // 主要動作：一鍵前往官方點餐頁
-  //  - 連結已帶入代碼（肯德基 / 達美樂）→ 直接開啟
-  //  - 有代碼但需手動輸入 → 開啟的同時複製代碼，到結帳頁貼上即可
+  // 一鍵開 App：先複製代碼（App 內需手動輸入），再依系統開啟商店頁（已安裝會顯示「打開」）；
+  // 電腦上沒有 App 可開，改在卡片內展開兩個商店連結
+  const openApp = async () => {
+    if (!app) return;
+    const platform = detectPlatform();
+    const url = platform === 'ios' ? app.ios : platform === 'android' ? app.android : undefined;
+    if (!url) {
+      setStorePicker((v) => !v);
+      return;
+    }
+    if (c.code) await copy(`已複製 ${c.code}，在 App 結帳時貼上`).catch(() => undefined);
+    window.location.href = url;
+  };
+
+  // 主要動作：
+  //  - 有網頁點餐 → 「前往點餐」（肯德基 / 達美樂的連結已帶入代碼；其他品牌有代碼則同時複製）
+  //  - 只有 App 能用的優惠（麥當勞、APP 專屬）→ 「開啟 App」為主，官網為輔
   const needsManualCode = !!c.code && !c.codeAutoApplied;
+  const appFirst = !!app && (!orderUrl || c.tags.includes('APP 專屬'));
   const ctaLabel = c.expired ? '已過期' : orderUrl ? (needsManualCode ? '複製代碼並點餐' : '前往點餐') : '查看活動';
   const ctaHref = c.expired ? undefined : (orderUrl ?? c.sourceUrl);
 
@@ -194,23 +225,50 @@ export default function CouponCard({ coupon: c, onCopied }: { coupon: CouponView
           )}
 
           <div className="flex gap-2">
-            <a
-              href={ctaHref}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              aria-disabled={!ctaHref}
-              onClick={() => needsManualCode && copy(`已複製 ${c.code}，到結帳頁貼上即可`)}
-              className={clsx(
-                'flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl text-sm font-bold transition-colors duration-150',
-                ctaHref
-                  ? 'bg-red-600 text-white hover:bg-red-700 active:bg-red-800'
-                  : 'pointer-events-none bg-stone-200 text-stone-500 dark:bg-stone-800',
-              )}
-            >
-              {c.codeAutoApplied && ctaHref && <Sparkles className="h-4 w-4" />}
-              {ctaLabel}
-              {ctaHref && <ArrowUpRight className="h-4 w-4" />}
-            </a>
+            {appFirst ? (
+              <>
+                <button type="button" onClick={openApp} className={clsx(BTN_PRIMARY, 'flex-1')}>
+                  <Smartphone className="h-4 w-4" />
+                  開啟 App
+                </button>
+                {ctaHref && (
+                  <a
+                    href={ctaHref}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    onClick={() => needsManualCode && copy(`已複製 ${c.code}，到結帳頁貼上即可`)}
+                    className={BTN_SECONDARY}
+                  >
+                    <Globe className="h-4 w-4" />
+                    官網
+                  </a>
+                )}
+              </>
+            ) : (
+              <>
+                <a
+                  href={ctaHref}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  aria-disabled={!ctaHref}
+                  onClick={() => needsManualCode && copy(`已複製 ${c.code}，到結帳頁貼上即可`)}
+                  className={clsx(
+                    'flex-1',
+                    ctaHref ? BTN_PRIMARY : 'pointer-events-none flex h-11 items-center justify-center rounded-xl bg-stone-200 text-sm font-bold text-stone-500 dark:bg-stone-800',
+                  )}
+                >
+                  {c.codeAutoApplied && ctaHref && <Sparkles className="h-4 w-4" />}
+                  {ctaLabel}
+                  {ctaHref && <ArrowUpRight className="h-4 w-4" />}
+                </a>
+                {app && (
+                  <button type="button" onClick={openApp} aria-label={`開啟 ${app.name}`} className={BTN_SECONDARY}>
+                    <Smartphone className="h-4 w-4" />
+                    App
+                  </button>
+                )}
+              </>
+            )}
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -222,6 +280,28 @@ export default function CouponCard({ coupon: c, onCopied }: { coupon: CouponView
               <ChevronDown className={clsx('h-4 w-4 transition-transform duration-200', open && 'rotate-180')} />
             </button>
           </div>
+
+          {storePicker && app && (
+            <div className="mt-3 rounded-xl bg-stone-50 p-3 text-[13px] leading-relaxed text-stone-600 dark:bg-stone-950/40 dark:text-stone-300">
+              <p>
+                在手機上點「App」會直接開啟 <strong className="font-semibold text-stone-800 dark:text-stone-100">{app.name}</strong>{' '}
+                的商店頁，已安裝會顯示「打開」。
+                {c.code && <> 優惠代碼 <span className="font-mono font-semibold">{c.code}</span> 請在 App 結帳時輸入。</>}
+              </p>
+              <div className="mt-2.5 flex gap-2">
+                {app.ios && (
+                  <a href={app.ios} target="_blank" rel="noopener noreferrer" className={clsx(BTN_SECONDARY, 'flex-1')}>
+                    App Store
+                  </a>
+                )}
+                {app.android && (
+                  <a href={app.android} target="_blank" rel="noopener noreferrer" className={clsx(BTN_SECONDARY, 'flex-1')}>
+                    Google Play
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
 
           {open && (
             <div id={`${c.id}-details`} className="mt-3 space-y-2 rounded-xl bg-stone-50 p-3 text-[13px] leading-relaxed text-stone-600 dark:bg-stone-950/40 dark:text-stone-300">

@@ -1,20 +1,634 @@
 [
   {
+    "title": "國王特選雙人餐",
+    "description": "最高現省$150！人氣雙人餐優惠自由配：華堡、花生培根脆雞堡、無麵包雙層烤牛堡、無麵包雙層脆雞堡系列等明星菜單。",
+    "discountPrice": 279,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/15054N.png",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/330506",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-330506",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "雙人海陸大餐",
+    "description": "大魚大肉一次滿足！厚安格斯牛肉加上雙層鮮甜鱈魚，真材實料，無人工香料，優惠又心安。",
+    "discountPrice": 299,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/151290.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/330598",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-330598",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "皇家華堡安格斯雙套餐",
+    "description": "火烤美味就在漢堡王",
+    "discountPrice": 299,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/151520605.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/331710",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-331710",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "洋蔥圈(小)買一送一",
+    "description": "鮮甜洋蔥包裹酥脆外層，雙倍滿足限時優惠",
+    "discountPrice": 49,
+    "tags": [
+      "買一送一",
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/146250.png",
+    "conditions": "買一送一。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/331763",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-331763",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "四塊雞塊買一送一",
+    "description": "雞塊控有福啦人氣美味雙倍帶走，8塊雞只要$55！",
+    "discountPrice": 55,
+    "tags": [
+      "買一送一",
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/144070.png",
+    "conditions": "買一送一。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/331765",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-331765",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "花生培根脆雞堡+小薯+4塊雞塊+中飲",
+    "description": "限時53折！折後只要119元！濃郁花生香遇上鹹香培根花生培根脆雞堡附餐搭配香濃酥脆薯條、4塊雞塊與中飲！(原價226元)",
+    "discountPrice": 119,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/146240.png",
+    "conditions": "單人獨享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/331831",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-331831",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "中杯飲料買一送一",
+    "description": "飲料時刻快樂加倍，限時 5 折超划算！",
+    "discountPrice": 38,
+    "tags": [
+      "買一送一",
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/147080.png",
+    "conditions": "買一送一。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/331943",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-331943",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T15:59:46.608Z"
+  },
+  {
+    "title": "超省自由配 159",
+    "description": "個人餐4件組只要$159！美味漢堡四選一，加上兩份點心及一杯飲料，優惠又滿足！",
+    "discountPrice": 159,
+    "tags": [],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/11062N.png",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332242",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332242",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "薯條(小)買一送一",
+    "description": "薯條控集合小薯買一送一，快樂就是雙份分享！",
+    "discountPrice": 49,
+    "tags": [
+      "買一送一",
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/146960.png",
+    "conditions": "買一送一。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332319",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332319",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "黃金QQ球(3入)買一送一",
+    "description": "一口咬下黑糖麻糬香Q彈口感別錯過！",
+    "discountPrice": 39,
+    "tags": [
+      "買一送一",
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/147610.png",
+    "conditions": "買一送一。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332468",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332468",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "國王點心全餐",
+    "discountPrice": 179,
+    "tags": [],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/15180.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332532",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332532",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "超值三重奏",
+    "discountPrice": 289,
+    "tags": [],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/15181.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332534",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332534",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "雙起士牛肉堡+4塊雞塊+小薯+中飲",
+    "description": "限時49折！折後只要109元！雙層起士香濃加倍雙起士牛肉堡配上酥脆薯條、4塊雞塊與中飲！ (原價221元)",
+    "discountPrice": 109,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148150.png",
+    "conditions": "單人獨享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332788",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332788",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "雙層火烤牛肉堡+4塊雞塊+小薯+中飲",
+    "description": "限時55折！折後只要139元！牛肉控直接開吃！雙層火烤牛肉堡套餐點心搭配小薯、4塊雞塊與中飲！ (原價251元)",
+    "discountPrice": 139,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148160.png",
+    "conditions": "單人獨享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332790",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332790",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "安格斯自由配",
+    "discountPrice": 239,
+    "tags": [],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/15193.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332810",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332810",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "捲捲德腸單人霸主餐",
+    "discountPrice": 179,
+    "tags": [],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/1115197.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332862",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332862",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "辣薯球(小)買一送一",
+    "description": "5折優惠！微辣控必收辣薯球一顆接一顆超過癮！",
+    "discountPrice": 49,
+    "tags": [
+      "買一送一",
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148220.png",
+    "conditions": "買一送一。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332866",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332866",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "1+1 49元",
+    "description": "五選一(4塊雞塊/小辣薯球/小薯條/小洋蔥圈/黃金QQ球3入)+三選一(小飲/熱美式研磨(小)/熱紅茶)",
+    "discountPrice": 49,
+    "tags": [
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148230.png",
+    "conditions": "1+1 自由配$49。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332868",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332868",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T15:59:46.608Z"
+  },
+  {
+    "title": "1+1 69元",
+    "description": "八選一(BBQ培根牛肉堡/經典脆雞堡/華鱈魚堡/洋蔥圈蔬菜堡/6塊雞塊/蘋果派/雞薯條8入/勁濃起士薯)+五選一(玉米濃湯(小)/美式研磨(中)/飲料(中)/黃金QQ球(3入)/薯條(小))",
+    "discountPrice": 69,
+    "tags": [
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148240.png",
+    "conditions": "1+1 自由配$69。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332870",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332870",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T15:59:46.608Z"
+  },
+  {
+    "title": "玉米濃湯(小)買一送一",
+    "description": "暖胃時刻剛剛好香濃美味原價享2份！",
+    "discountPrice": 45,
+    "tags": [
+      "買一送一",
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/147090.png",
+    "conditions": "買一送一。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332882",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332882",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "雙層火烤牛肉堡+雙層小華堡(原/辣)+小薯+雞薯條4入+小辣薯球+中飲X2",
+    "description": "限時優惠 259元，現省198元！兩顆雙層牛肉搭配小薯、小辣薯球與兩杯中飲，再加碼送雞薯條（4入），豐富組合一次滿足！(原價457元)",
+    "discountPrice": 259,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148480.png",
+    "conditions": "雙人分享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/332950",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-332950",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "花生培根脆雞堡+花生培根牛肉堡+中薯+6塊雞塊+中飲X2",
+    "description": "限時優惠199 元，現省194元！鹹香花生醬遇上香脆培根！脆雞＋火烤牛肉，搭配中薯、6塊雞塊與兩杯中飲 ，澎湃美味直接配好！ (原價393元)",
+    "discountPrice": 199,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148580.png",
+    "conditions": "雙人分享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333080",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333080",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "勁濃安格斯牛肉堡+安格斯厚切牛肉堡+小薯+雞薯條4入+小辣薯球+中飲X2",
+    "description": "限時優惠 299元，現省220元！安格斯牛肉控別錯過！勁濃安格斯＋安格斯厚切，搭配小薯、小辣薯球與兩杯中飲，再送雞薯條（4入）！(原價519元)",
+    "discountPrice": 299,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148590.png",
+    "conditions": "雙人分享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333082",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333082",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "兩堡任選自由配$99",
+    "description": "雙起士牛肉堡、經典脆雞堡、華鱈魚堡、BBQ培根牛肉堡，任選搭配全都百元有找！",
+    "discountPrice": 99,
+    "tags": [
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148630.png",
+    "conditions": "兩堡任選自由配。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333217",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333217",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "雙層田園華鱈魚堡+小薯+4塊雞塊+中飲",
+    "description": "限時優惠享52折只要 139元！金黃酥脆鱈魚層層堆疊，鮮香一口接一口！搭配小薯、4塊雞塊與中飲更過癮！(原價266元)",
+    "discountPrice": 139,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148680.png",
+    "conditions": "單人獨享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333227",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333227",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "Q彈海老牛肉堡+捲捲德腸烤牛堡+小薯+雞薯條4入+小辣薯球+中飲X2",
+    "description": "限時53折！折後只要279元！Q彈海老牛肉堡+捲捲德腸烤牛堡，再搭配小薯、雞薯條（4入）、小辣薯球與中飲×2，分享美味一次帶走！（原價526元）",
+    "discountPrice": 279,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148820.png",
+    "conditions": "雙人分享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333401",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333401",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "川椒皇家華堡餐",
+    "description": "經典火烤牛肉搭配川椒風味醬，麻香帶勁、香辣過癮，入口層層堆疊，帶來令人欲罷不能的川味饗宴。 含蛋、大豆、麩質之穀物、芝麻、甲殼、花生、堅果，不適合對其過敏者食用。",
+    "discountPrice": 219,
+    "tags": [],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/N15210.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333467",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333467",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "川椒辣雞腿堡餐",
+    "description": "酥脆多汁辣雞腿排結合川椒風味醬，麻、辣、香一次滿足，濃厚辛香刺激味蕾，越吃越涮嘴。 含蛋、大豆、麩質之穀物、芝麻、甲殼、花生、堅果，不適合對其過敏者食用。",
+    "discountPrice": 169,
+    "tags": [],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/N15211.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333469",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333469",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "川椒雙人餐",
+    "description": "經典火烤牛肉搭配川椒風味醬，麻香帶勁、香辣過癮，入口層層堆疊，帶來令人欲罷不能的川味饗宴。 含蛋、大豆、麩質之穀物、芝麻、甲殼、花生、堅果，不適合對其過敏者食用。",
+    "discountPrice": 339,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/N15212.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333471",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333471",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "國王辣雞腿堡餐",
+    "description": "經典國王大雞堡全新升級！國王辣雞腿堡選用原肉雞腿排，帶來更加鮮嫩多汁的口感，再加入清爽蔬菜，讓每一口都更豐富。口感酥脆、香氣十足、辣味帶勁，層層堆疊出令人一口接一口的爽辣滋味！",
+    "discountPrice": 179,
+    "tags": [],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/1115213.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333554",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333554",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "皇家華堡雙套餐",
+    "discountPrice": 329,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/15214.jpg",
+    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333562",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333562",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "兩堡任選自由配$129",
+    "description": "打造你專屬火烤牛肉漢堡組合！喜歡濃郁起士、香濃花生，還是經典辣味？小華堡（原／辣）、雙起士培根牛肉堡、花生培根牛肉堡、西部小華堡，四款人氣漢堡任選搭配，優惠最低54折起！",
+    "discountPrice": 129,
+    "tags": [],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148870.png",
+    "conditions": "兩堡任選自由配。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333566",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333566",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "1+1_89元",
+    "description": "三選一(捲捲德腸堡/Q彈海老堡/小華堡(原/辣))+五選一(玉米濃湯(小)/美式研磨(中)/飲料(中)/黃金QQ球(3入)/薯條(小))",
+    "discountPrice": 89,
+    "tags": [
+      "百元有找"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148880.png",
+    "conditions": "1+1 自由配$89。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333568",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333568",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T15:59:46.608Z"
+  },
+  {
+    "title": "Q彈海老牛肉堡+小薯+4塊雞塊+中飲",
+    "description": "限時59折！折後只要169元！Q彈海老與多汁牛肉的雙重美味，搭配香脆小薯、4塊雞塊及中杯飲料，超值美味立即享用！(原價286元)",
+    "discountPrice": 169,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148890.png",
+    "conditions": "單人獨享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333570",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333570",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T15:59:46.608Z"
+  },
+  {
+    "title": "勁濃培根烤腿堡+火烤雞腿培根堡+小薯+雞薯條4入+小辣薯球+中飲X2",
+    "description": "限時優惠259元，現省198元！勁濃培根烤腿堡＋火烤雞腿培根堡，雙重雞腿排搭配濃郁培根香，再加上小薯、雞薯條、小辣薯球及中飲X2，澎湃配餐一次享有！(原價457元)",
+    "discountPrice": 259,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://burgerkingimage.azureedge.net/product/148900.png",
+    "conditions": "雙人分享餐。官網線上訂購價格，實際供應以結帳頁為準。",
+    "orderUrl": "https://www.burgerking.com.tw/product/333572",
+    "sourceUrl": "https://www.burgerking.com.tw/category/6",
+    "id": "burgerking-333572",
+    "brand": "burgerking",
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
     "title": "門市優惠券（最新一期）",
-    "description": "最新一期門市優惠券，結帳時向店員出示畫面上的優惠券代號即可使用。",
+    "description": "臨櫃或自助點餐機使用的當期優惠券，結帳時出示畫面上的優惠券代號即可。",
     "tags": [
       "外帶"
     ],
     "imageUrl": "https://burgerkingimage.azureedge.net/picsave/goshopping8-3-520000/9636ddae-319e-450a-b1d8-699a75cd2bb9.jpg",
     "conditions": "優惠內容與代號以圖片為準，限門市使用。",
-    "orderUrl": "https://www.burgerking.com.tw/",
+    "orderUrl": "https://www.burgerking.com.tw/coupon",
     "sourceUrl": "https://www.burgerking.com.tw/coupon",
     "id": "burgerking-store-coupon",
     "brand": "burgerking",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
-    "updatedAt": "2026-10-11T10:19:19.802Z"
+    "updatedAt": "2026-10-12T15:59:46.608Z"
   },
   {
     "title": "買大送大",
@@ -23,7 +637,7 @@
     "tags": [
       "買一送一"
     ],
-    "imageUrl": "https://www.dominos.com.tw/media/fjajewwx/%E8%B2%B7%E5%A4%A7%E9%80%81%E5%A4%A7banner-500x500.jpg",
+    "imageUrl": "https://www.dominos.com.tw/media/ehpj2d4l/%E8%B2%B7%E5%A4%A7%E9%80%81%E5%A4%A7banner-1200x1540-2.jpg",
     "conditions": "選擇外送地址或外帶門市後即可套用。",
     "orderUrl": "https://order.dominos.com.tw/?vc=616394",
     "codeAutoApplied": true,
@@ -31,9 +645,9 @@
     "id": "dominos-616394",
     "brand": "dominos",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
-    "updatedAt": "2026-10-11T10:19:48.798Z"
+    "updatedAt": "2026-10-12T15:59:46.608Z"
   },
   {
     "title": "3個799",
@@ -48,19 +662,19 @@
     "id": "dominos-918582",
     "brand": "dominos",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
   {
-    "title": "超越科學的美味（外帶）",
+    "title": "超越科學的美味買1送1（外帶）",
     "description": "Volcano 599 BOGO",
     "code": "951640",
     "tags": [
       "買一送一",
       "外帶"
     ],
-    "imageUrl": "https://www.dominos.com.tw/media/ktjlvcnq/%E8%B6%85%E8%B6%8A%E7%A7%91%E5%AD%B8%E7%9A%84%E7%BE%8E%E5%91%B3banner-1200x1540.jpg",
+    "imageUrl": "https://www.dominos.com.tw/media/hm0nkn3o/%E8%B6%85%E8%B6%8A%E7%A7%91%E5%AD%B8%E7%9A%84%E7%BE%8E%E5%91%B3%E8%B2%B71%E9%80%811banner-500x500.jpg",
     "conditions": "選擇外送地址或外帶門市後即可套用。",
     "orderUrl": "https://order.dominos.com.tw/pickup/autocomplete/overlay?vc=951640",
     "codeAutoApplied": true,
@@ -68,9 +682,9 @@
     "id": "dominos-951640",
     "brand": "dominos",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
-    "updatedAt": "2026-10-11T10:19:48.798Z"
+    "updatedAt": "2026-10-12T15:59:46.608Z"
   },
   {
     "title": "咔啦脆雞x1 + 咔啦雞腿堡x1 + 百事可樂(小)x1",
@@ -85,7 +699,7 @@
     "id": "kfc-40610",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -104,7 +718,7 @@
     "id": "kfc-40670",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -121,7 +735,7 @@
     "id": "kfc-40680",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -140,7 +754,7 @@
     "id": "kfc-50467",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -160,7 +774,7 @@
     "id": "kfc-50475",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -178,7 +792,7 @@
     "id": "kfc-50476",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -197,7 +811,7 @@
     "id": "kfc-50508",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -214,7 +828,7 @@
     "id": "kfc-50509",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -233,7 +847,7 @@
     "id": "kfc-50510",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -252,7 +866,7 @@
     "id": "kfc-50511",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -269,7 +883,7 @@
     "id": "kfc-50512",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -286,7 +900,7 @@
     "id": "kfc-50513",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -303,7 +917,7 @@
     "id": "kfc-50514",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -320,7 +934,7 @@
     "id": "kfc-50515",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -339,7 +953,7 @@
     "id": "kfc-50516",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -360,7 +974,7 @@
     "id": "kfc-50528",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -381,7 +995,7 @@
     "id": "kfc-50529",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -398,7 +1012,7 @@
     "id": "kfc-50537",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -416,7 +1030,7 @@
     "id": "kfc-50544",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -438,7 +1052,7 @@
     "id": "kfc-50551",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
   },
@@ -458,9 +1072,105 @@
     "id": "kfc-50552",
     "brand": "kfc",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:48.798Z"
+  },
+  {
+    "title": "午茶鹹點推薦：辣味麥克鷄塊 爽辣夠味",
+    "description": "辣味麥克鷄塊 爽辣夠味！下午茶宵夜就是愛這味",
+    "discountPrice": 45,
+    "priceFrom": true,
+    "tags": [
+      "百元有找"
+    ],
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "imageUrl": "https://www.mcdonalds.com/content/dam/sites/tw/hero/2026/H_0902SpiMcNugget.png",
+    "conditions": "麥當勞辣味麥克鷄塊供應時間自2026年9月2日上午10:30起至2026年10月20日或售完為止麥克鷄塊沾醬供應規則：每份4塊或6塊麥克鷄塊提供沾醬1盒、每份10塊麥克鷄塊提供沾醬2盒。",
+    "sourceUrl": "https://www.mcdonalds.com/tw/zh-tw/whats-hot/0902SpicyMcNuggets.html",
+    "id": "mcdonalds-0902SpicyMcNuggets",
+    "brand": "mcdonalds",
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "2026麥當勞甜心卡買A送B享優惠！甜心數位e卡線上輕鬆買",
+    "description": "2026霹靂甜心卡 3/18優惠登場震撼江湖",
+    "discountPrice": 39,
+    "tags": [
+      "買一送一",
+      "APP 專屬",
+      "百元有找"
+    ],
+    "startDate": "2026-10-12",
+    "endDate": "2027-03-31",
+    "imageUrl": "https://www.mcdonalds.com/content/dam/sites/tw/hero/2026/0318DessertCard_Hero.jpg",
+    "conditions": "： 「2026甜心卡」卡包(內含甜心卡乙張、數位序號乙組)自2026年3月18日開始販售至售完為止。",
+    "sourceUrl": "https://www.mcdonalds.com/tw/zh-tw/whats-hot/2026_DessertCard.html",
+    "id": "mcdonalds-2026_DessertCard",
+    "brand": "mcdonalds",
+    "updatedAt": "2026-10-12T15:59:46.608Z"
+  },
+  {
+    "title": "麥當勞1+1星級點，$50/$69超值組合隨意搭",
+    "description": "1+1星級點$50起",
+    "discountPrice": 50,
+    "priceFrom": true,
+    "tags": [
+      "百元有找"
+    ],
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "imageUrl": "https://www.mcdonalds.com/content/dam/sites/tw/hero/2026/PlanP_BA_Menu_0428.png",
+    "conditions": "： 1+1星級點組合供應時間為上午10:30至凌晨5:00。",
+    "sourceUrl": "https://www.mcdonalds.com/tw/zh-tw/whats-hot/BAOneMenu.html",
+    "id": "mcdonalds-BAOneMenu",
+    "brand": "mcdonalds",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T15:59:46.608Z"
+  },
+  {
+    "title": "麥當勞2026得來速貴賓卡，憑卡享VIP專屬優惠",
+    "description": "得來速VIP貴賓卡，全年享專屬優惠",
+    "tags": [],
+    "startDate": "2026-10-12",
+    "endDate": "2026-12-31",
+    "imageUrl": "https://www.mcdonalds.com/content/dam/sites/tw/hero/2025/1105DTVIP_HERO.jpg",
+    "conditions": "實際優惠內容以麥當勞APP及門市公告為準。",
+    "sourceUrl": "https://www.mcdonalds.com/tw/zh-tw/whats-hot/DTVIPCard.html",
+    "id": "mcdonalds-DTVIPCard",
+    "brand": "mcdonalds",
+    "updatedAt": "2026-10-12T15:59:46.608Z"
+  },
+  {
+    "title": "點心推薦：法點自由配！現烤法式點心搭配McCafé享優惠",
+    "description": "法國直送！現烤法點每日新鮮出爐",
+    "tags": [],
+    "startDate": "2026-10-12",
+    "endDate": "2026-10-20",
+    "imageUrl": "https://www.mcdonalds.com/content/dam/sites/tw/hero/2025/McCafe%CC%81-%E6%B3%95%E9%BB%9E%E8%87%AA%E7%94%B1%E9%85%8D_2336x1040_0314.png",
+    "conditions": "實際優惠內容以麥當勞APP及門市公告為準。",
+    "sourceUrl": "https://www.mcdonalds.com/tw/zh-tw/whats-hot/McCafe-Bakery.html",
+    "id": "mcdonalds-McCafe-Bakery",
+    "brand": "mcdonalds",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T15:59:46.608Z"
+  },
+  {
+    "title": "用麥當勞APP點歡樂送2.0超便利，滿$350贈麥克鷄塊",
+    "description": "麥當勞APP「歡樂送2.0」，享專屬優惠券天天送！消費滿$350，就送「6塊麥克鷄塊」",
+    "tags": [
+      "外送",
+      "APP 專屬"
+    ],
+    "startDate": "2026-09-23",
+    "endDate": "2026-10-13",
+    "imageUrl": "https://www.mcdonalds.com/content/dam/sites/tw/hero/2026/H_0923MDS-OneApp.png",
+    "conditions": "麥當勞 APP 僅相容於 iOS 17 以上或Android 10.0.0 以上版本之智慧型手機，GooglePlay商店須更新至最新版本並通過驗證，且需於網路連線良好狀態下使用。",
+    "sourceUrl": "https://www.mcdonalds.com/tw/zh-tw/digital/mcdapp.html",
+    "id": "mcdonalds-mcdapp",
+    "brand": "mcdonalds",
+    "updatedAt": "2026-10-12T16:00:31.099Z"
   },
   {
     "title": "青年大滿足",
@@ -477,7 +1187,7 @@
   {
     "title": "2026-MOS Friends:夏日出遊記",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "tags": [],
     "imageUrl": "https://www.mos.com.tw/upload/banner/20260731_174544_097.jpg",
     "orderUrl": "https://weborder.mos.com.tw/",
@@ -490,7 +1200,7 @@
   {
     "title": "魔力萬聖節",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "tags": [],
     "imageUrl": "https://www.mos.com.tw/upload/banner/20260930_101024_024.jpg",
     "orderUrl": "https://weborder.mos.com.tw/",
@@ -503,7 +1213,7 @@
   {
     "title": "國際咖啡日-2",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "tags": [],
     "imageUrl": "https://www.mos.com.tw/upload/banner/20260930_105838_012.jpg",
     "orderUrl": "https://weborder.mos.com.tw/",
@@ -516,7 +1226,7 @@
   {
     "title": "2026Q4週二摩斯咖啡日",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "tags": [],
     "imageUrl": "https://www.mos.com.tw/upload/banner/20260930_110508_002.jpg",
     "orderUrl": "https://weborder.mos.com.tw/",
@@ -529,7 +1239,7 @@
   {
     "title": "0701午茶優惠",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "tags": [],
     "imageUrl": "https://www.mos.com.tw/upload/banner/20260630_174135_000.jpg",
     "orderUrl": "https://weborder.mos.com.tw/",
@@ -553,7 +1263,7 @@
     "id": "pizzahut-11390",
     "brand": "pizzahut",
     "startDate": "2026-10-12",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T23:20:34.550Z"
   },
@@ -571,7 +1281,7 @@
     "id": "pizzahut-11413",
     "brand": "pizzahut",
     "startDate": "2026-10-12",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T23:20:34.550Z"
   },
@@ -587,7 +1297,7 @@
     "id": "pizzahut-12337",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -605,9 +1315,27 @@
     "id": "pizzahut-14218",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
+  },
+  {
+    "title": "一公尺派對盒",
+    "description": "大比薩3個(限方形帕瑪森鬆厚餅皮)+指定副食組合。",
+    "discountPrice": 2199,
+    "priceFrom": true,
+    "tags": [
+      "套餐"
+    ],
+    "imageUrl": "https://img.pizzahut.com.tw/w230/30841edafcfa6a9802b072e42b54875b.jpg",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1668&p_id=15148",
+    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
+    "id": "pizzahut-15148",
+    "brand": "pizzahut",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
   },
   {
     "title": "外帶大比薩送大比薩（火山系列）",
@@ -623,7 +1351,7 @@
     "id": "pizzahut-15352",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -644,7 +1372,7 @@
     "id": "pizzahut-15856",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -660,7 +1388,7 @@
     "id": "pizzahut-16356",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -676,7 +1404,7 @@
     "id": "pizzahut-16905",
     "brand": "pizzahut",
     "startDate": "2026-10-12",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T23:20:34.550Z"
   },
@@ -694,7 +1422,7 @@
     "id": "pizzahut-17508",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -710,7 +1438,7 @@
     "id": "pizzahut-17620",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -728,7 +1456,7 @@
     "id": "pizzahut-18124",
     "brand": "pizzahut",
     "startDate": "2026-10-12",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T23:20:34.550Z"
   },
@@ -746,7 +1474,7 @@
     "id": "pizzahut-18168",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -763,7 +1491,7 @@
     "id": "pizzahut-18779",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -782,7 +1510,7 @@
     "id": "pizzahut-18783",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -799,7 +1527,7 @@
     "id": "pizzahut-18842",
     "brand": "pizzahut",
     "startDate": "2026-10-12",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T23:20:34.550Z"
   },
@@ -817,7 +1545,7 @@
     "id": "pizzahut-18929",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -835,27 +1563,7 @@
     "id": "pizzahut-18930",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
-    "endDateEstimated": true,
-    "updatedAt": "2026-10-11T10:19:19.802Z"
-  },
-  {
-    "title": "一公尺派對盒$2199起 買就送3包樂事榴槤洋芋片",
-    "description": "大比薩3個(限方形帕瑪森鬆厚餅皮)+厚燒醬烤BBQ(2腿2排)+黃金和風鱈魚塊8個+麻糬QQ球(巧克力)8個+BBQ烤雞4翅4腿+薯金幣大份+德國芝心腸6條+黃金雞軟骨大份+酥炸杏鮑菇2份+黃金雞柳條8條 外帶一公尺派對盒就送3包樂事榴槤洋芋片 (數量有限，送完為止)",
-    "discountPrice": 2199,
-    "priceFrom": true,
-    "tags": [
-      "買一送一",
-      "外帶",
-      "套餐"
-    ],
-    "imageUrl": "https://img.pizzahut.com.tw/w230/51a25e569577c5d568d6d5563c6a9e99.jpg",
-    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1668&p_id=18979",
-    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
-    "id": "pizzahut-18979",
-    "brand": "pizzahut",
-    "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -873,7 +1581,7 @@
     "id": "pizzahut-19011",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -888,9 +1596,25 @@
     "id": "pizzahut-19124",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
+  },
+  {
+    "title": "芋霸不能火山小比薩 單點$249",
+    "description": "單點芋霸不能火山小比薩",
+    "discountPrice": 249,
+    "priceFrom": true,
+    "tags": [],
+    "imageUrl": "https://img.pizzahut.com.tw/w230/26c0fe4056c6d00fc141df5f854c1252.jpg",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1694&p_id=19139",
+    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
+    "id": "pizzahut-19139",
+    "brand": "pizzahut",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
   },
   {
     "title": "厚燒雞腿分享餐 $333",
@@ -906,7 +1630,7 @@
     "id": "pizzahut-19141",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -922,7 +1646,7 @@
     "id": "pizzahut-19142",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -940,24 +1664,7 @@
     "id": "pizzahut-19152",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
-    "endDateEstimated": true,
-    "updatedAt": "2026-10-11T10:19:19.802Z"
-  },
-  {
-    "title": "外帶買大送大，加碼再送烤雞+可樂！",
-    "description": "外帶買大比薩送大比薩，加碼再送送烤雞+可樂(1.25L)！",
-    "tags": [
-      "買一送一",
-      "外帶"
-    ],
-    "imageUrl": "https://img.pizzahut.com.tw/w230/9bdd8e4f1b1c84cfd52fd957feef7c23.jpg",
-    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1685&p_id=19155",
-    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
-    "id": "pizzahut-19155",
-    "brand": "pizzahut",
-    "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -973,7 +1680,7 @@
     "id": "pizzahut-19161",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -989,7 +1696,7 @@
     "id": "pizzahut-2696",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -1005,7 +1712,7 @@
     "id": "pizzahut-2704",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -1021,7 +1728,7 @@
     "id": "pizzahut-4453",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -1039,7 +1746,7 @@
     "id": "pizzahut-4454",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
@@ -1057,25 +1764,44 @@
     "id": "pizzahut-4757",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
   {
-    "title": "2026台灣大哥大用戶專屬!指定套餐↘下殺71折起!!!",
+    "title": "外帶大比薩送大比薩",
+    "description": "外帶買大比薩送大比薩/外送買大比薩送小比薩。使用PK APP訂購再送專屬好禮。",
+    "tags": [
+      "買一送一",
+      "外送",
+      "外帶",
+      "APP 專屬"
+    ],
+    "imageUrl": "https://img.pizzahut.com.tw/w230/552ec2b498492b322fb4ce4918371013.jpg",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1685&p_id=7372",
+    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
+    "id": "pizzahut-7372",
+    "brand": "pizzahut",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-12T16:00:31.099Z"
+  },
+  {
+    "title": "2026台灣大哥大用戶專屬!指定套餐下殺71折起!!!",
     "description": "台灣大哥大用戶2026年度專屬優惠 至頂呱呱門市消費， 只要出示台…",
     "tags": [
       "套餐"
     ],
     "startDate": "2026-09-21",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "imageUrl": "https://www.tkkfriedchicken.com/upload/news/b3ce0e82552bf19ca578b53c6e11d4199.jpg",
     "orderUrl": "https://www.tkkinc.com.tw/tkkorder/",
     "sourceUrl": "https://www.tkkfriedchicken.com/eventContent_611_2026%E5%8F%B0%E7%81%A3%E5%A4%A7%E5%93%A5%E5%A4%A7%E7%94%A8%E6%88%B6%E5%B0%88%E5%B1%AC!%E6%8C%87%E5%AE%9A%E5%A5%97%E9%A4%90%E2%86%98%E4%B8%8B%E6%AE%BA71%E6%8A%98%E8%B5%B7!!!.html",
     "id": "tkk-611",
     "brand": "tkk",
     "endDateEstimated": true,
-    "updatedAt": "2026-10-11T10:19:19.802Z"
+    "updatedAt": "2026-10-12T16:02:42.302Z"
   },
   {
     "title": "頂呱呱X悠遊卡10-12月專屬限定優惠套餐",
@@ -1116,7 +1842,7 @@
       "套餐"
     ],
     "startDate": "2026-09-21",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "imageUrl": "https://www.tkkfriedchicken.com/upload/news/b2d2bdb1a6a0170f4da536b95f110d881.jpg",
     "orderUrl": "https://www.tkkinc.com.tw/tkkorder/",
     "sourceUrl": "https://www.tkkfriedchicken.com/eventContent_614_%E5%88%A5%E5%8F%AA%E7%9F%A5%E9%81%93%E7%82%B8%E9%9B%9E%EF%BC%81%E9%A0%82%E5%91%B1%E5%91%B1%E4%B9%9F%E6%9C%89%E7%83%A4%E9%9B%9E%E8%85%BF%EF%BC%81%E4%B8%AD%E7%A7%8B%E6%8E%A8%E5%87%BA%E3%80%8C%E7%84%A1%E6%95%B5%E7%83%A4%E8%85%BF%E3%80%8D%E9%99%90%E5%AE%9A%E5%A5%97%E9%A4%90%EF%BC%8C%E9%A6%96%E4%B8%89%E6%97%A5%E5%86%8D%E5%8A%A0%E7%A2%BC%E5%91%B1%E5%91%B1%E5%8C%85%E8%B2%B7%E4%B8%80%E9%80%81%E4%B8%80%E7%84%A1%E9%99%90%E9%87%8F%E5%8A%A0%E8%B3%BC%EF%BC%81.html",
@@ -1131,7 +1857,7 @@
     "discountPrice": 299,
     "tags": [],
     "startDate": "2026-09-30",
-    "endDate": "2026-10-19",
+    "endDate": "2026-10-20",
     "imageUrl": "https://www.tkkfriedchicken.com/upload/news/b1e1bb06d3653b6e79e822501df69eef7.jpg",
     "orderUrl": "https://www.tkkinc.com.tw/tkkorder/",
     "sourceUrl": "https://www.tkkfriedchicken.com/eventContent_615_%E9%A0%82%E5%91%B1%E5%91%B1%E3%80%8C%E4%B8%80%E6%96%A4%E9%9B%9E%E3%80%8D%E5%BE%A9%E5%88%BB%E5%9B%9E%E6%AD%B8%EF%BC%81%E9%87%8D%E7%8F%BE%E5%89%B5%E5%A7%8B%E3%80%8C%E7%B6%93%E5%85%B8%E8%82%89%E5%A1%8A%E3%80%8D%E7%8D%A8%E5%AE%B6%E5%88%87%E6%B3%95%EF%BC%8C%E4%B8%80%E6%96%A4(600g)%E9%99%90%E6%99%82299%E5%85%83%E9%96%8B%E5%90%83%EF%BC%81.html",

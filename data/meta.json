@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-12T16:02:42.302Z",
+  "sources": [
+    {
+      "brand": "mcdonalds",
+      "label": "麥當勞官網「最新活動」",
+      "url": "https://www.mcdonalds.com/tw/zh-tw/whats-hot.html",
+      "ok": true,
+      "count": 6,
+      "lastSuccess": "2026-10-12T16:02:42.302Z"
+    },
+    {
+      "brand": "kfc",
+      "label": "肯德基官網「優惠券」",
+      "url": "https://www.kfcclub.com.tw/coupon",
+      "ok": true,
+      "count": 21,
+      "lastSuccess": "2026-10-12T16:02:42.302Z"
+    },
+    {
+      "brand": "pizzahut",
+      "label": "必勝客官網「優惠推薦」",
+      "url": "https://www.pizzahut.com.tw/promotions/",
+      "ok": true,
+      "count": 31,
+      "lastSuccess": "2026-10-12T16:02:42.302Z"
+    },
+    {
+      "brand": "dominos",
+      "label": "達美樂官網首頁優惠",
+      "url": "https://www.dominos.com.tw/",
+      "ok": true,
+      "count": 3,
+      "lastSuccess": "2026-10-12T16:02:42.302Z"
+    },
+    {
+      "brand": "mos",
+      "label": "摩斯官網首頁活動",
+      "url": "https://www.mos.com.tw/",
+      "ok": true,
+      "count": 6,
+      "lastSuccess": "2026-10-12T16:02:42.302Z"
+    },
+    {
+      "brand": "burgerking",
+      "label": "漢堡王官網「優惠券」",
+      "url": "https://www.burgerking.com.tw/category/6",
+      "ok": true,
+      "count": 36,
+      "lastSuccess": "2026-10-12T16:02:42.302Z"
+    },
+    {
+      "brand": "tkk",
+      "label": "頂呱呱官網「活動快訊」",
+      "url": "https://www.tkkfriedchicken.com/event.html",
+      "ok": true,
+      "count": 5,
+      "lastSuccess": "2026-10-12T16:02:42.302Z"
+    }
+  ]
+}

@@ -7,14 +7,17 @@
  *   - 達美樂   www.dominos.com.tw 首頁帶 ?vc= 優惠代碼的訂購連結
  *   - 頂呱呱   www.tkkfriedchicken.com/event.html 活動快訊
  *   - 摩斯     www.mos.com.tw 首頁活動 Banner → 各活動頁
- *   - 漢堡王   www.burgerking.com.tw/coupon 門市優惠券（圖片）
- *   麥當勞 / Subway 的優惠僅在 App 內提供，沒有公開來源。
+ *   - 漢堡王   www.burgerking.com.tw/category/6 官網訂餐「優惠券」分類 + /coupon 門市優惠券（圖片）
+ *   - 麥當勞   www.mcdonalds.com/tw 「最新活動」各活動頁（優惠券本身只在 App 內，這裡收錄官網公告的優惠活動）
+ *   Subway 台灣官網沒有公開優惠資訊，暫不收錄。
  *
  * 合併規則：
  *   1. 來源成功 → 該品牌的爬蟲資料以本次結果「整批取代」（官方下架即消失）。
  *   2. 來源失敗 → 保留該品牌上次的資料（優雅 Fallback），不影響其他品牌。
  *   3. 只要有任一來源成功，就移除 seed 產生的示範資料。
- *   4. 內容沒變就不寫檔 → GitHub Actions 不會產生多餘 commit。
+ *   4. 優惠內容沒變就不改寫 coupons.json。
+ *   5. 每次執行都更新 data/meta.json（檢查時間、各來源狀態），網站據此顯示「最後檢查」與資料來源；
+ *      每日一次的 commit 也讓公開 repo 的排程不會因 60 天無活動被 GitHub 自動停用。
  *
  * 請遵守各站 robots.txt 與使用條款，並維持低頻率（每日一次）。
  */
@@ -24,6 +27,7 @@ import * as cheerio from 'cheerio';
 import type { BrandId, Coupon } from '../types/coupon';
 
 const DATA_FILE = path.join(process.cwd(), 'data', 'coupons.json');
+const META_FILE = path.join(process.cwd(), 'data', 'meta.json');
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
 /** 官方未公布截止日時，推估的有效天數；每日重新爬取會往後延，下架即從清單移除 */
@@ -37,6 +41,10 @@ type Draft = Omit<Coupon, 'id' | 'brand' | 'updatedAt' | 'endDate' | 'startDate'
 
 interface Source {
   brand: BrandId;
+  /** 顯示在網站「資料來源」的名稱 */
+  label: string;
+  /** 來源頁（給使用者查證） */
+  url: string;
   crawl: () => Promise<Draft[]>;
 }
 
@@ -57,7 +65,26 @@ async function get(url: string, init: RequestInit = {}): Promise<Response> {
 }
 const getHtml = async (url: string) => cheerio.load(await (await get(url)).text());
 
-const clean = (s: string | undefined) => (s ?? '').replace(/\s+/g, ' ').trim();
+/** 限制同時連線數，避免對官網造成負擔 */
+async function mapLimit<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
+  const out: R[] = new Array(items.length);
+  let next = 0;
+  const worker = async () => {
+    while (next < items.length) {
+      const i = next++;
+      out[i] = await fn(items[i]);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return out;
+}
+
+// 官網文字常夾帶 emoji 與零寬空白；網站設計上不使用 emoji，一律在入庫前移除
+const clean = (s: string | undefined) =>
+  (s ?? '')
+    .replace(/[\p{Extended_Pictographic}\u{FE0F}\u{200B}-\u{200D}\u{2060}]/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 const num = (s: string | undefined) => {
   const n = Number((s ?? '').replace(/[^\d.]/g, ''));
   return Number.isFinite(n) && n > 0 ? n : undefined;
@@ -105,6 +132,8 @@ function withPriceTag(tags: string[], price?: number) {
 
 const kfc: Source = {
   brand: 'kfc',
+  label: '肯德基官網「優惠券」',
+  url: 'https://www.kfcclub.com.tw/coupon',
   async crawl() {
     const res = await get('https://olo-api.kfcclub.com.tw/menu/v1/QueryCoupons', {
       method: 'POST',
@@ -164,6 +193,8 @@ const PH_SECTIONS: Record<string, string> = { '11': 'APP 專屬', '1685': '外�
 
 const pizzahut: Source = {
   brand: 'pizzahut',
+  label: '必勝客官網「優惠推薦」',
+  url: 'https://www.pizzahut.com.tw/promotions/',
   async crawl() {
     const base = 'https://www.pizzahut.com.tw/promotions/';
     const $ = await getHtml(base);
@@ -204,6 +235,8 @@ const pizzahut: Source = {
 
 const dominos: Source = {
   brand: 'dominos',
+  label: '達美樂官網首頁優惠',
+  url: 'https://www.dominos.com.tw/',
   async crawl() {
     const base = 'https://www.dominos.com.tw/';
     const $ = await getHtml(base);
@@ -239,6 +272,8 @@ const dominos: Source = {
 
 const tkk: Source = {
   brand: 'tkk',
+  label: '頂呱呱官網「活動快訊」',
+  url: 'https://www.tkkfriedchicken.com/event.html',
   async crawl() {
     const base = 'https://www.tkkfriedchicken.com/event.html';
     const $ = await getHtml(base);
@@ -248,7 +283,8 @@ const tkk: Source = {
       const href = $el.find('a.announcement--pic').attr('href') ?? '';
       const m = decodeURIComponent(href).match(/^eventContent_(\d+)_(.+)\.html$/);
       if (!m) return;
-      const [, id, fullTitle] = m;
+      const id = m[1];
+      const fullTitle = clean(m[2]);
       // 只收錄與優惠有關的活動，略過周邊商品、門市公告等
       if (!/優惠|折|送|\$|元|限定|套餐|加購/.test(fullTitle) || /周邊/.test(fullTitle)) return;
       const date = clean($el.find('.date').text()).replaceAll('.', '-');
@@ -273,6 +309,8 @@ const tkk: Source = {
 
 const mos: Source = {
   brand: 'mos',
+  label: '摩斯官網首頁活動',
+  url: 'https://www.mos.com.tw/',
   async crawl() {
     const base = 'https://www.mos.com.tw/';
     const $ = await getHtml(base);
@@ -316,44 +354,199 @@ const mos: Source = {
   },
 };
 
+const BK = 'https://www.burgerking.com.tw';
+const BK_SECTION_TAGS: Record<string, string[]> = {
+  買一送一: ['買一送一'],
+  單人獨享餐: ['套餐'],
+  雙人分享餐: ['套餐'],
+};
+
 const burgerking: Source = {
   brand: 'burgerking',
+  label: '漢堡王官網「優惠券」',
+  url: `${BK}/category/6`,
   async crawl() {
-    const base = 'https://www.burgerking.com.tw/coupon';
+    const base = `${BK}/category/6`;
     const $ = await getHtml(base);
-    const img = $('#imgcoupon').attr('src');
-    if (!img) throw new Error('coupon image not found');
-    return [
-      {
-        key: 'store-coupon',
-        title: '門市優惠券（最新一期）',
-        description: '最新一期門市優惠券，結帳時向店員出示畫面上的優惠券代號即可使用。',
-        tags: ['外帶'],
-        imageUrl: img,
-        conditions: '優惠內容與代號以圖片為準，限門市使用。',
-        orderUrl: 'https://www.burgerking.com.tw/',
+
+    // 同一商品可能同時出現在多個分類（例：買一送一 + 官網獨家），合併分類名稱
+    const items = new Map<string, { name: string; price?: number; img?: string; url: string; sections: string[] }>();
+    $('section').each((_, sec) => {
+      const section = clean($(sec).find('h2').first().text());
+      $(sec)
+        .find('a[href*="/product/"]')
+        .each((_, a) => {
+          const href = $(a).attr('href') ?? '';
+          const id = href.match(/product\/(\d+)/)?.[1];
+          const name = clean($(a).find('div.text-center').first().text());
+          if (!id || !name) return;
+          const prev = items.get(id);
+          if (prev) {
+            if (section && !prev.sections.includes(section)) prev.sections.push(section);
+            return;
+          }
+          items.set(id, {
+            name,
+            price: num($(a).children('div').last().text()),
+            img: $(a).find('img').attr('src') || undefined,
+            url: new URL(href, BK).toString(),
+            sections: section ? [section] : [],
+          });
+        });
+    });
+    if (!items.size) throw new Error('no products in coupon category');
+
+    // 商品頁的 meta description 是一句優惠說明（例：「限時 5 折超划算！」）
+    const entries = [...items];
+    const descs = await mapLimit(entries, 4, async ([, it]) => {
+      try {
+        const $p = await getHtml(it.url);
+        return clean($p('meta[name="description"]').attr('content'));
+      } catch {
+        return '';
+      }
+    });
+
+    const out: Draft[] = entries.map(([id, it], i) => {
+      // 「漢堡王雙人餐｜國王特選雙人餐：最高現省$150！」→「最高現省$150！」
+      const desc = descs[i].replace(/^[^｜]*｜/, '').replace(/^[^：]{1,24}：/, '');
+      const title = it.name.replace(/^[(（]官網獨家[)）]\s*/, '');
+      const tags = new Set(guessTags(`${it.name} ${desc} ${it.sections.join(' ')}`));
+      for (const s of it.sections) for (const t of BK_SECTION_TAGS[s] ?? []) tags.add(t);
+      return {
+        key: id,
+        title,
+        description: desc && desc !== title ? desc : undefined,
+        discountPrice: it.price,
+        tags: withPriceTag([...tags], it.price),
+        imageUrl: it.img,
+        conditions: `${it.sections.join('、') || '優惠券'}。官網線上訂購價格，實際供應以結帳頁為準。`,
+        orderUrl: it.url,
         sourceUrl: base,
-      },
-    ];
+      };
+    });
+
+    // 門市臨櫃 / 自助點餐機用的當期優惠券（整頁圖片）
+    try {
+      const $c = await getHtml(`${BK}/coupon`);
+      const img = $c('#imgcoupon').attr('src');
+      if (img)
+        out.push({
+          key: 'store-coupon',
+          title: '門市優惠券（最新一期）',
+          description: '臨櫃或自助點餐機使用的當期優惠券，結帳時出示畫面上的優惠券代號即可。',
+          tags: ['外帶'],
+          imageUrl: img,
+          conditions: '優惠內容與代號以圖片為準，限門市使用。',
+          orderUrl: `${BK}/coupon`,
+          sourceUrl: `${BK}/coupon`,
+        });
+    } catch {
+      // 門市券頁失敗不影響線上優惠券
+    }
+    return out;
   },
 };
 
-const SOURCES: Source[] = [kfc, pizzahut, dominos, tkk, mos, burgerking];
+const MCD = 'https://www.mcdonalds.com';
+// 「最新活動」裡也有徵才、問卷、捐血、餐點推薦文等非優惠頁面
+const MCD_PROMO = /優惠|買\s*[A-Za-z一1]\s*送|\$\s?\d{2,4}|\d{2,4}\s*元|折|免費|贈|加購|特價|半價/;
+const MCD_EXCLUDE = /中獎名單|問卷|調查|招募|捐血|音樂|環保|循環|購物袋|生日派對|企業|B2B|吃什麼/i;
+
+/** 從活動頁內文找截止日：「至2027年3月31日」優先，其次「9/23-10/13」 */
+function mcdEndDate(text: string): { start?: string; end?: string } {
+  const pad = (n: string) => n.padStart(2, '0');
+  const full = text.match(/至\s*(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日/);
+  if (full) return { end: `${full[1]}-${pad(full[2])}-${pad(full[3])}` };
+  const range = parseRange(text);
+  return range ? { start: range.start, end: range.end } : {};
+}
+
+async function parseMcdPage(url: string): Promise<Draft | null> {
+  const $ = await getHtml(url);
+  const title = clean($('title').text()).split(/[｜|]/)[0].trim();
+  const desc = clean($('meta[name="description"]').attr('content'));
+  const hero = $('img')
+    .filter((_, el) => ($(el).attr('src') ?? '').includes('/content/dam/sites/tw/hero/'))
+    .first();
+  const heroAlt = clean(hero.attr('alt'));
+  $('script, style, noscript, header, footer, nav').remove();
+  const body = clean($('body').text());
+
+  const head = `${title} ${desc} ${heroAlt}`;
+  // 有些活動頁標題只寫品名，優惠價只出現在內文（例：辣味麥克鷄塊「套餐加點優惠價 $59」）
+  const promo = MCD_PROMO.test(head) || /(?:優惠價|特價)\s*\$?\s*\d{2,4}/.test(body);
+  if (!title || !promo || MCD_EXCLUDE.test(head)) return null;
+
+  const { start, end } = mcdEndDate(body);
+  if (end && end < today()) return null; // 已結束的活動頁
+
+  // 「優惠價 $59」「只要$39」；多個價格取最低並標示「起」
+  const prices = [...body.matchAll(/(?:只要|優惠價|特價|雙享價)\s*\$?\s*(\d{2,4})/g)].map((m) => Number(m[1]));
+  const price = prices.length ? Math.min(...prices) : undefined;
+  const notes = body.match(/注意事項\s*(.{10,160}?)(?:[。；]|$)/)?.[1];
+
+  return {
+    key: url.split('/').pop()!.replace(/\.html$/, ''),
+    title,
+    description: heroAlt && heroAlt !== title ? heroAlt : desc.slice(0, 80) || undefined,
+    discountPrice: price,
+    priceFrom: new Set(prices).size > 1 || undefined,
+    // 麥當勞優惠集中在 App（甜心卡數位卡、歡樂送專屬券等）
+    tags: withPriceTag([...new Set([...guessTags(head), ...(/APP/i.test(head) ? ['APP 專屬'] : [])])], price),
+    startDate: start,
+    endDate: end,
+    imageUrl: hero.attr('src') ? new URL(hero.attr('src')!, MCD).toString() : undefined,
+    conditions: notes ? `${notes}。` : '實際優惠內容以麥當勞APP及門市公告為準。',
+    sourceUrl: url,
+  };
+}
+
+const mcdonalds: Source = {
+  brand: 'mcdonalds',
+  label: '麥當勞官網「最新活動」',
+  url: `${MCD}/tw/zh-tw/whats-hot.html`,
+  async crawl() {
+    const $ = await getHtml(`${MCD}/tw/zh-tw/whats-hot.html`);
+    const pages = new Set<string>([`${MCD}/tw/zh-tw/digital/mcdapp.html`]);
+    $('a[href*="/tw/zh-tw/whats-hot/"]').each((_, a) => {
+      pages.add(new URL($(a).attr('href')!, MCD).toString().split(/[?#]/)[0]);
+    });
+    const parsed = await mapLimit([...pages].slice(0, 40), 4, (u) => parseMcdPage(u).catch(() => null));
+    const out = parsed.filter((d): d is Draft => d !== null);
+    if (!out.length) throw new Error('no promotion pages parsed');
+    return out;
+  },
+};
+
+const SOURCES: Source[] = [mcdonalds, kfc, pizzahut, dominos, mos, burgerking, tkk];
 
 // ---------- merge & write ----------
 
-async function readExisting(): Promise<Coupon[]> {
+interface SourceStatus {
+  brand: BrandId;
+  label: string;
+  url: string;
+  ok: boolean;
+  count: number;
+  /** 最近一次成功抓取的時間；失敗時沿用上次 */
+  lastSuccess?: string;
+  error?: string;
+}
+
+async function readJson<T>(file: string, fallback: T): Promise<T> {
   try {
-    return JSON.parse(await fs.readFile(DATA_FILE, 'utf-8'));
+    return JSON.parse(await fs.readFile(file, 'utf-8')) as T;
   } catch {
-    return [];
+    return fallback;
   }
 }
 
 const sig = (c: Coupon) => JSON.stringify({ ...c, updatedAt: '', endDate: c.endDateEstimated ? '' : c.endDate });
 
 async function main() {
-  const existing = await readExisting();
+  const existing = await readJson<Coupon[]>(DATA_FILE, []);
+  const prevMeta = await readJson<{ sources?: SourceStatus[] }>(META_FILE, {});
   const prevById = new Map(existing.map((c) => [c.id, c]));
   const now = new Date().toISOString();
 
@@ -363,20 +556,16 @@ async function main() {
         const drafts = await src.crawl();
         if (!drafts.length) throw new Error('0 items');
         console.log(`[ok]   ${src.brand}: ${drafts.length} items`);
-        return { src, drafts };
+        return { src, drafts, error: undefined };
       } catch (err) {
-        console.warn(`[skip] ${src.brand}: ${(err as Error).message} (keeping previous data)`);
-        return { src, drafts: null };
+        const error = (err as Error).message;
+        console.warn(`[skip] ${src.brand}: ${error} (keeping previous data)`);
+        return { src, drafts: null, error };
       }
     }),
   );
 
   const succeeded = new Set(results.filter((r) => r.drafts).map((r) => r.src.brand));
-  if (!succeeded.size) {
-    console.log('All sources failed - data/coupons.json untouched.');
-    return;
-  }
-
   const next: Coupon[] = existing.filter((c) => !c.demo && !succeeded.has(c.brand));
 
   for (const { src, drafts } of results) {
@@ -398,11 +587,29 @@ async function main() {
     }
   }
 
+  // 各來源狀態：網站「資料來源」區塊顯示，失敗的來源也看得到上次成功時間
+  const prevStatus = new Map((prevMeta.sources ?? []).map((s) => [s.brand, s]));
+  const sources: SourceStatus[] = results.map(({ src, drafts, error }) => ({
+    brand: src.brand,
+    label: src.label,
+    url: src.url,
+    ok: !!drafts,
+    count: next.filter((c) => c.brand === src.brand).length,
+    lastSuccess: drafts ? now : prevStatus.get(src.brand)?.lastSuccess,
+    error: error?.slice(0, 120),
+  }));
+  await fs.writeFile(META_FILE, JSON.stringify({ checkedAt: now, sources }, null, 2) + '\n', 'utf-8');
+
+  if (!succeeded.size) {
+    console.log('All sources failed - data/coupons.json untouched.');
+    return;
+  }
+
   next.sort((a, b) => a.id.localeCompare(b.id));
   const out = JSON.stringify(next, null, 2) + '\n';
   const before = JSON.stringify([...existing].sort((a, b) => a.id.localeCompare(b.id)), null, 2) + '\n';
   if (out === before) {
-    console.log('No changes - data/coupons.json untouched.');
+    console.log('No coupon changes - data/coupons.json untouched.');
     return;
   }
   await fs.writeFile(DATA_FILE, out, 'utf-8');
