@@ -36,24 +36,6 @@
     "updatedAt": "2026-10-12T16:00:31.099Z"
   },
   {
-    "title": "皇家華堡安格斯雙套餐",
-    "description": "火烤美味就在漢堡王",
-    "discountPrice": 299,
-    "tags": [
-      "套餐"
-    ],
-    "imageUrl": "https://burgerkingimage.azureedge.net/product/151520605.jpg",
-    "conditions": "官網獨家。官網線上訂購價格，實際供應以結帳頁為準。",
-    "orderUrl": "https://www.burgerking.com.tw/product/331710",
-    "sourceUrl": "https://www.burgerking.com.tw/category/6",
-    "id": "burgerking-331710",
-    "brand": "burgerking",
-    "startDate": "2026-10-12",
-    "endDate": "2026-10-20",
-    "endDateEstimated": true,
-    "updatedAt": "2026-10-12T16:00:31.099Z"
-  },
-  {
     "title": "洋蔥圈(小)買一送一",
     "description": "鮮甜洋蔥包裹酥脆外層，雙倍滿足限時優惠",
     "discountPrice": 49,
