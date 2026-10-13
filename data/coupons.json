@@ -1461,23 +1461,6 @@
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
   {
-    "title": "外帶單點大比薩6折 (免費再送烤雞)",
-    "description": "全口味13吋大比薩外帶單點6折，免費再送厚燒醬烤BBQ (2腿2排) 或 BBQ烤雞 8塊(4翅4腿)",
-    "tags": [
-      "外帶",
-      "APP 專屬"
-    ],
-    "imageUrl": "https://img.pizzahut.com.tw/w230/29dfb2b0050bef0addf2463fc682932a.jpg",
-    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=11&p_id=18779",
-    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
-    "id": "pizzahut-18779",
-    "brand": "pizzahut",
-    "startDate": "2026-10-11",
-    "endDate": "2026-10-20",
-    "endDateEstimated": true,
-    "updatedAt": "2026-10-11T10:19:19.802Z"
-  },
-  {
     "title": "雙人開飯豪飽餐$449起",
     "description": "小比薩1個+紙包筆管麵/紙包飯2份",
     "discountPrice": 449,
@@ -1568,19 +1551,39 @@
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
   {
+    "title": "外帶單點大比薩半價 (免費再送烤雞)",
+    "description": "全口味13吋大比薩單點5折，免費再送厚燒醬烤BBQ (2腿2排) 或 BBQ烤雞 8塊(4翅4腿)",
+    "tags": [
+      "外帶",
+      "APP 專屬"
+    ],
+    "imageUrl": "https://img.pizzahut.com.tw/w230/c0473982056bc192e10b6b1735313913.jpg",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=11&p_id=19076",
+    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
+    "id": "pizzahut-19076",
+    "brand": "pizzahut",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-13T01:24:54.302Z"
+  },
+  {
     "title": "單點 五倍起司焗烤千層麵 送 小份薯金幣+QQ球5顆",
+    "description": "單點 五倍起司焗烤千層麵 送 小份薯金幣+QQ球5顆",
     "discountPrice": 259,
     "priceFrom": true,
-    "tags": [],
+    "tags": [
+      "APP 專屬"
+    ],
     "imageUrl": "https://img.pizzahut.com.tw/w230/f724af682df602393aefd67e1f97a5e2.jpg",
-    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1674&p_id=19124",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=11&p_id=19124",
     "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
     "id": "pizzahut-19124",
     "brand": "pizzahut",
     "startDate": "2026-10-11",
     "endDate": "2026-10-20",
     "endDateEstimated": true,
-    "updatedAt": "2026-10-11T10:19:19.802Z"
+    "updatedAt": "2026-10-13T01:24:54.302Z"
   },
   {
     "title": "芋霸不能火山小比薩 單點$249",
@@ -1667,6 +1670,92 @@
     "updatedAt": "2026-10-11T10:19:19.802Z"
   },
   {
+    "title": "外帶買大送大，加碼再送副食+飲料！",
+    "description": "外帶買大比薩送大比薩，加碼再送副食5選1+1.25L飲料！ (和風鱈魚塊5塊/黃金雞柳條4條/德國芝心腸3個/黃金雞軟骨大份/QQ球10顆)",
+    "tags": [
+      "買一送一",
+      "外帶"
+    ],
+    "imageUrl": "https://img.pizzahut.com.tw/w230/5b7b28c6e44939516cbb646e110891b4.jpg",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1685&p_id=19184",
+    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
+    "id": "pizzahut-19184",
+    "brand": "pizzahut",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-13T01:24:54.302Z"
+  },
+  {
+    "title": "濃起司漢堡排比薩",
+    "description": "萬聖節限定！厚實漢堡排、燻雞絲與培根鋪滿餅皮，飽滿肉香與多重起司交。特製黑煙燻起司醬勾勒出神祕蜘蛛網，為豐富肉料添上迷人煙燻香氣，每一口都能品味起司的醇厚與肉料的豐盛，滿足肉食愛好者的味蕾，打造邪惡又過癮的萬聖節美味！",
+    "discountPrice": 429,
+    "priceFrom": true,
+    "tags": [],
+    "imageUrl": "https://img.pizzahut.com.tw/w230/91c83e8de10f9ada28974c9ce805f34e.jpg",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1694&p_id=19210",
+    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
+    "id": "pizzahut-19210",
+    "brand": "pizzahut",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-13T01:24:54.302Z"
+  },
+  {
+    "title": "香辣麻奶火山濃起司漢堡排比薩",
+    "description": "嗜辣者注意！香辣麻奶火山起司餅皮，以香麻辣勁襯托濃醇奶香，搭配起司更添滑順口感。厚實漢堡排、燻雞絲與培根層層堆疊肉香，黑煙燻起司醬勾勒出萬聖節神祕蜘蛛網，麻、辣、濃、香一次爆發，每一口都濃辣過癮！",
+    "discountPrice": 628,
+    "priceFrom": true,
+    "tags": [],
+    "imageUrl": "https://img.pizzahut.com.tw/w230/cbee03d0637b9b13e51fc12ccbecb513.jpg",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1694&p_id=19211",
+    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
+    "id": "pizzahut-19211",
+    "brand": "pizzahut",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-13T01:24:54.302Z"
+  },
+  {
+    "title": "40周年慶 消費滿$400送$400",
+    "description": "歡慶必勝客在台40週年！消費滿$400送$400 滿$800送$800商品券 憑券於2027/1/25前消費滿$399可兌換QQ球10顆(價值$99)、滿$599可兌換厚燒醬烤BBQ (2腿2排)+薯金幣(大份)(價值$308)、滿$899送烤雞大拼盤(價值$449)",
+    "discountPrice": 429,
+    "priceFrom": true,
+    "tags": [
+      "外帶"
+    ],
+    "imageUrl": "https://img.pizzahut.com.tw/w230/29d4246c770ff324ea6789093d83af73.jpg",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1685&p_id=19216",
+    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
+    "id": "pizzahut-19216",
+    "brand": "pizzahut",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-13T01:24:54.302Z"
+  },
+  {
+    "title": "巧克力QQ球5顆 買一送一",
+    "description": "巧克力QQ球5顆 買一送一 $59 (原價$118)",
+    "discountPrice": 59,
+    "priceFrom": true,
+    "tags": [
+      "買一送一",
+      "百元有找"
+    ],
+    "imageUrl": "https://img.pizzahut.com.tw/w230/1c99e2d529096bc3f477cb1b2e1901a2.jpg",
+    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1668&p_id=19249",
+    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
+    "id": "pizzahut-19249",
+    "brand": "pizzahut",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-20",
+    "endDateEstimated": true,
+    "updatedAt": "2026-10-13T01:24:54.302Z"
+  },
+  {
     "title": "Hot任選小比薩餐",
     "description": "小比薩1個+熱烤類1份。",
     "discountPrice": 398,
@@ -1749,25 +1838,6 @@
     "endDate": "2026-10-20",
     "endDateEstimated": true,
     "updatedAt": "2026-10-11T10:19:19.802Z"
-  },
-  {
-    "title": "外帶大比薩送大比薩",
-    "description": "外帶買大比薩送大比薩/外送買大比薩送小比薩。使用PK APP訂購再送專屬好禮。",
-    "tags": [
-      "買一送一",
-      "外送",
-      "外帶",
-      "APP 專屬"
-    ],
-    "imageUrl": "https://img.pizzahut.com.tw/w230/552ec2b498492b322fb4ce4918371013.jpg",
-    "orderUrl": "https://www.pizzahut.com.tw/order/?mode=step_2&cu=1685&p_id=7372",
-    "sourceUrl": "https://www.pizzahut.com.tw/promotions/",
-    "id": "pizzahut-7372",
-    "brand": "pizzahut",
-    "startDate": "2026-10-13",
-    "endDate": "2026-10-20",
-    "endDateEstimated": true,
-    "updatedAt": "2026-10-12T16:00:31.099Z"
   },
   {
     "title": "2026台灣大哥大用戶專屬!指定套餐下殺71折起!!!",
