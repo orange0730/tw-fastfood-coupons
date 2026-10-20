@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-19T22:55:38.776Z",
+  "checkedAt": "2026-10-20T22:23:05.085Z",
   "sources": [
     {
       "brand": "mcdonalds",
@@ -16,23 +16,23 @@
       "url": "https://www.kfcclub.com.tw/coupon",
       "ok": true,
       "count": 19,
-      "lastSuccess": "2026-10-19T22:55:38.776Z"
+      "lastSuccess": "2026-10-20T22:23:05.085Z"
     },
     {
       "brand": "pizzahut",
       "label": "必勝客官網「優惠推薦」",
       "url": "https://www.pizzahut.com.tw/promotions/",
       "ok": true,
-      "count": 35,
-      "lastSuccess": "2026-10-19T22:55:38.776Z"
+      "count": 34,
+      "lastSuccess": "2026-10-20T22:23:05.085Z"
     },
     {
       "brand": "dominos",
       "label": "達美樂官網首頁優惠",
       "url": "https://www.dominos.com.tw/",
       "ok": true,
-      "count": 1,
-      "lastSuccess": "2026-10-19T22:55:38.776Z"
+      "count": 2,
+      "lastSuccess": "2026-10-20T22:23:05.085Z"
     },
     {
       "brand": "mos",
@@ -40,7 +40,7 @@
       "url": "https://www.mos.com.tw/",
       "ok": true,
       "count": 6,
-      "lastSuccess": "2026-10-19T22:55:38.776Z"
+      "lastSuccess": "2026-10-20T22:23:05.085Z"
     },
     {
       "brand": "burgerking",
@@ -48,7 +48,7 @@
       "url": "https://www.burgerking.com.tw/category/6",
       "ok": true,
       "count": 36,
-      "lastSuccess": "2026-10-19T22:55:38.776Z"
+      "lastSuccess": "2026-10-20T22:23:05.085Z"
     },
     {
       "brand": "tkk",
@@ -56,7 +56,7 @@
       "url": "https://www.tkkfriedchicken.com/event.html",
       "ok": true,
       "count": 5,
-      "lastSuccess": "2026-10-19T22:55:38.776Z"
+      "lastSuccess": "2026-10-20T22:23:05.085Z"
     }
   ]
 }
